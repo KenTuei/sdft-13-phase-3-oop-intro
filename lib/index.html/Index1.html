@@ -1,0 +1,86 @@
+#  What is an Association Relationship?
+# In OOP, association means that two classes are related, but neither owns the other. One class just uses or works with instances of another. It's a "has-a" relationship.
+
+# -----------------------------------------example:-------------------------------
+
+# A TM (Technical Mentor) has students
+
+# But the students also exist on their own — they are not part of TM directly
+
+# Code Breakdown
+# -------------------------1. Student class-----------------------------------
+
+# class Student:
+#     def __init__(self, name):
+#         self.name = name
+# This defines a Student class.
+
+# Each student has a name when created.
+
+# ---------------------------2. TM (Technical Mentor) class-----------------------------
+
+# class TM:
+#     def __init__(self, name):
+#         self.name = name
+#         self.students = []
+# TM stands for Technical Mentor.
+
+# Each TM has:
+
+# a name
+
+# a list of students (which starts empty)
+
+# ------------------------------3. add_students method-----------------------------------------------
+
+# def add_students(self, newStudents):
+#     self.students.extend(newStudents)
+# This method takes a list of new students and adds them to the mentor's students list using extend().
+
+# ---------------------------------4. list_students method----------------------------------------------------
+
+# def list_students(self):
+#     for student in self.students:
+#         print(f"The technical mentor {self.name} mentors {student.name}")
+# Loops through each student and prints a message showing the mentorship connection.
+
+-------------------------------------# Creating Objects-------------------------------------------------------
+# saint = Student("Saint")
+# winnie = Student("Winnie")
+# benjamin = Student("Benjamin")
+# derick = Student("Derrick")
+# These are four student objects with different names.
+
+----------------------------------------#Creating a Mentor and Adding Students-------------------------------------------------------
+# tomashi = TM("Tomashi")
+# tomashi.add_students([saint, winnie, benjamin, derick])
+# You create a mentor named Tomashi
+
+# Then assign the four students to this mentor using add_students()
+
+----------------------------------------# Output the Relationships------------------------------------------------
+
+# tomashi.list_students()
+# This prints:
+# The technical mentor Tomashi mentors Saint
+# The technical mentor Tomashi mentors Winnie
+# The technical mentor Tomashi mentors Benjamin
+# The technical mentor Tomashi mentors Derrick
+------------------------------------------#  Final Thoughts------------------------------------------------
+
+# This is a one-to-many association:
+
+# One mentor (TM) is associated with many students.
+
+# The Student and TM classes are independent.
+
+# This is not inheritance, not composition — just a simple association.
+
+
+
+
+
+
+
+
+
